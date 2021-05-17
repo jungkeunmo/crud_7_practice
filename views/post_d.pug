@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        form(action="/postDetail", method="post")
+            input(type="hidden" name="id" value=postData._id)
+            input(type="text" name="title" value=postData.title)
+            textarea(name="description") #{postData.description}
+            input(type="submit" value="수정하기")
+
+        form(action="/postDelete", method="post")
+            input(type="hidden" name="id" value=postData._id)
+            input(type="submit" value="삭제하기")
